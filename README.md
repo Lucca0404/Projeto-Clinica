@@ -21,3 +21,14 @@
   Após isso está pronto, uma maneira funcional de garantir um atendimento justo para os clientes. A próxima tarefa seria uma maneira de registrar esses pacientes para manter seus dados salvos no sistema da clínica.</p>
 
 ## Registro de Pacientes 📖
+###Listas
+
+<p>
+  Quando penso em um sistema de registro, vem na minha cabeça algo similar a uma lista telefônica. Um lugar cheio de elementos ordenados e de <b>fácil busca</b>(levando em conta que todos os dados estejam ordenados). No entanto, quando falamos de programação temos que lembrar que tudo tem um preço computacional. Buscar um elemento em uma lista não é de graça e dependendo da situação pode se tornar uma operação muito ineficiente. Vamos pensar primeiro em uma lista desordenada, para procurar um elemento teremos que olhar índice por índice até achar o que estamos procurando(isso se acharmos), esse tipo de busca tem complexidade O(N) ou linear, ou seja, cresce proporcionalmente ao número de pacientes registrados.
+<br>
+  No entanto, existe um tipo de busca que é semelhante a aquela que fazemos em uma lista telefônica ordenada chamada <b>Busca Binária</b>. Esse algoritmo procura o elemento pensando em como ele estará posicionado na lista de acordo com a sua ordem. É como se procurassemos a página 450 de um livro, abrimos ele no meio e se estamos na página 300 nós continuamos passando páginas para a frente e eliminamos todas aquelas que estão anteas da 300, já que evidentemente elas serão menores que 450. Este é o princípio, sempre abrir na metade e eliminar aqueles que temos certeza que não são o elemento. Já que sempre estamos limpando a lista pela metade esse tipo de algoritmo tem complexidade O(logN), sendo bem melhor que a busca linear. 
+<br>
+  Mas nem tudo são flores, para a busca binária funcionar a lista deve estar ordenada e garantir isso também não é de graça. Ordenar uma lista geralmente é uma tarefa cara de complexidade maior que O(N)(as vezes bem maior), e garantir que os elementos sempre serão inseridos em ordem também não sai barato. Todos esses fatores tornam a lista uma opção viável mas alguns problemas de eficiência. Sendo assim, decidi ir por outro caminho. Não vou usar uma lista para guardar o registro dos pacientes, mas sim outra estrutura muito conhecida e utilizada para situações desse tipo: o <i>HashMap</i>.
+</p>
+
+### HashMaps
