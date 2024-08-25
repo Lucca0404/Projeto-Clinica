@@ -31,7 +31,7 @@
   Após isso está pronto, uma maneira funcional de garantir um atendimento justo para os clientes. A próxima tarefa seria uma maneira de registrar esses pacientes para manter seus dados salvos no sistema da clínica.</p>
 
 ## Registro de Pacientes 📖
-### Listas 
+### Listas e Algoritmos de Busca 🔎
 
 <p>
   Quando penso em um sistema de registro, vem na minha cabeça algo similar a uma lista telefônica. Um lugar cheio de elementos ordenados e de <b>fácil busca</b>(levando em conta que todos os dados estejam ordenados). No entanto, quando falamos de programação temos que lembrar que tudo tem um preço computacional. Buscar um elemento em uma lista não é de graça e dependendo da situação pode se tornar uma operação muito ineficiente. Vamos pensar primeiro em uma lista desordenada, para procurar um elemento teremos que olhar índice por índice até achar o que estamos procurando(isso se acharmos), esse tipo de busca tem complexidade O(N) ou linear, ou seja, cresce proporcionalmente ao número de pacientes registrados.
