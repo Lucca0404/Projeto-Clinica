@@ -3,6 +3,7 @@ public abstract class Pessoa {
     protected String nome;
     protected String cpf;
     protected int idade;
+    protected boolean ativo;
 
     private boolean validarCpf(String cpf){
         int soma = 0;
@@ -57,6 +58,24 @@ public abstract class Pessoa {
     }
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+    public void desativar() {
+        if(this.ativo == false){
+            System.out.println("O paciente já está desativado");
+            return;
+        }
+        this.ativo = false;
+    }
+    public void ativar(){
+        if(this.ativo == true){
+            System.out.println("O paciente já está ativo");
+            return;
+        }
+        this.ativo = true;
     }
 
     public abstract void mostrar();
