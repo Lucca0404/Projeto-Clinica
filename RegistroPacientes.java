@@ -31,7 +31,7 @@ public class RegistroPacientes implements HashMap{
         int newPos;
         for(int i = 0; i < this.tamanho; i++){
             newPos = sondagemLinear(pos, i, this.tamanho);
-            if(this.itens[newPos] == null){
+            if(this.itens[newPos] == null || this.itens[newPos].ativo == false){
                 this.itens[newPos] = p;
                 this.numeroDePacientes++;
                 return true;
