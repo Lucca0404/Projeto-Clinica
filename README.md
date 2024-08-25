@@ -42,3 +42,7 @@
 </p>
 
 ### HashMaps 🗺️
+
+<p>
+  Acabamos de ver que tudo na programação tem um custo computacional. Porém existe um tipo de complexidade denominada O(1), isso significa que indendente da entrada de dados essa operação sempre será constante. E como se mesmo que nossa lista tivesse 1000, 10000 ou 1000000 de itens a busca por um elemento demandaria sempre a mesma quantidade de tempo. Parece bom demais para ser verdade né? Mas acredite existe uma estrutura que funciona assim. HashMaps(ou dicionários) são uma abstração de uma lista comum, neles os dados não sõ inseridos em uma ordem específica, no inicio ou no final. Mas sim de acordo com uma chave especial calculada a partir de uma característica do próprio elemento(esse tipo de estrutura sem começo e final bem definido é catálogada como estrutura desordenada). Caso tenha ficado confuso não se preocupe vou explicar passo a passo como eles funcionam. 
+</p>
