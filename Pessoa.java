@@ -49,7 +49,7 @@ public abstract class Pessoa {
     }
     public void setCpf(String cpf) {
         if(!validarCpf(cpf)){
-            System.out.println("CPF inválido");
+            throw new IllegalArgumentException("CPF inválido");
         }
         this.cpf = cpf;
     }
@@ -65,15 +65,13 @@ public abstract class Pessoa {
     }
     public void desativar() {
         if(this.ativo == false){
-            System.out.println("O paciente já está desativado");
-            return;
+            throw new IllegalStateException("A pessoa já está inativa");
         }
         this.ativo = false;
     }
     public void ativar(){
         if(this.ativo == true){
-            System.out.println("O paciente já está ativo");
-            return;
+            throw new IllegalStateException("A pessoa já está ativa");
         }
         this.ativo = true;
     }
