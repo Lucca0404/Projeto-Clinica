@@ -54,8 +54,7 @@ public class FilaPacientes implements FilaPrioridade{
 
     public boolean remover(){
         if(this.ehVazia()){
-            System.out.println("Fila já está vazia");
-            return false;
+            throw new IllegalStateException("A Fila está vazia");
         }
         No aux = this.fim;
         if(this.fim == this.inicio){
@@ -72,8 +71,7 @@ public class FilaPacientes implements FilaPrioridade{
 
     public void getProximo(){
         if(this.ehVazia()){
-            System.out.println("A fila está vazia");
-            return;
+            throw new IllegalStateException("A Fila está vazia");
         }
         System.out.println(this.fim.dados.nome);
     }
