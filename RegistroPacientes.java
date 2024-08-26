@@ -16,11 +16,13 @@ public class RegistroPacientes implements HashMap{
     }
     public boolean inserir(Pessoa p){
         if(p.cpf == null){
-            System.out.println("Pessoa sem CPF cadastrado");
-            return false;
+            throw new IllegalArgumentException("Paciente sem CPF cadastrado");
         }
-        if(this.pertence(p.cpf) || this.cheio()){
-            return false;
+        if(this.pertence(p.cpf)){
+            throw new IllegalStateException("Paciente já cadastrado");
+        }
+        if(this.cheio()){
+            throw new IllegalStateException("Registro já está cheio");
         }
         int chave = valorString(p.cpf);
         int pos = metodoDivisao(chave, this.tamanho);
@@ -32,20 +34,21 @@ public class RegistroPacientes implements HashMap{
         for(int i = 0; i < this.tamanho; i++){
             newPos = sondagemLinear(pos, i, this.tamanho);
             if(this.itens[newPos] == null || this.itens[newPos].ativo == false){
+                if(this.itens[newPos].ativo == false){
+                    this.numeroDePacientes--;
+                }
                 this.itens[newPos] = p;
                 this.numeroDePacientes++;
                 return true;
             }
         }
-        System.out.println("Ocorreu um erro na inserção");
-        return false;
+        throw new RuntimeException("A inserção do registro está com problemas");
     }
     public Pessoa buscar(String cpf){
         int valor = valorString(cpf);
         int pos = metodoDivisao(valor, this.tamanho);
         if(this.itens[pos] == null){
-            System.out.println("Paciente não está cadastrado");
-            return null;
+            throw new IllegalArgumentException("Paciente não está cadastrado");
         }
         if(this.itens[pos].cpf == cpf){
             return this.itens[pos];
@@ -57,8 +60,7 @@ public class RegistroPacientes implements HashMap{
                 return this.itens[newPos];
             }
         }
-        System.out.println("Ocorreu um erro na busca");
-        return null;
+        throw new RuntimeException("A busca do registro está com problemas");
     }
     public int valorString(String cpf){
         int valor = 7;
